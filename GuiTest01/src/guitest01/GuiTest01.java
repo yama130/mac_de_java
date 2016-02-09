@@ -22,12 +22,12 @@ public class GuiTest01 extends Application {
   @Override
   public void start(Stage primaryStage) {
     Button btn = new Button();
-    btn.setText("Say 'Hello World'");
+    btn.setText("日経ソフトウェアは");
     btn.setOnAction(new EventHandler<ActionEvent>() {
       
       @Override
       public void handle(ActionEvent event) {
-        System.out.println("Hello World!");
+        System.out.println("毎月２４日発売です");
       }
     });
     
@@ -36,7 +36,7 @@ public class GuiTest01 extends Application {
     
     Scene scene = new Scene(root, 300, 250);
     
-    primaryStage.setTitle("Hello World!");
+    primaryStage.setTitle("GUI TEST01");
     primaryStage.setScene(scene);
     primaryStage.show();
   }
