@@ -3,45 +3,46 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package guitest01;
+package guitest02;
 
+import java.util.Optional;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;        
+import org.controlsfx.dialog.FontSelectorDialog;
+
 /**
  *
  * @author ba20034
  */
-public class GuiTest01 extends Application {
+public class GuiTest02 extends Application {
   
   @Override
   public void start(Stage primaryStage) {
     Button btn = new Button();
-    btn.setText("日経ソフトウェアは");
+    btn.setText("日経ソフトウェア");
     btn.setOnAction(new EventHandler<ActionEvent>() {
       
       @Override
       public void handle(ActionEvent event) {
-//        System.out.println("毎月２４日発売です");
-         Alert al =new Alert(AlertType.INFORMATION);
-         al.setHeaderText("");
-         al.setContentText("毎月２４日発売です!");
-         al.showAndWait();
+//        System.out.println("Hello World!");
+        FontSelectorDialog fsd =new FontSelectorDialog(btn.getFont());
+        Optional<Font> selectedFont=fsd.showAndWait();
+        btn.setFont(selectedFont.get());
       }
     });
     
     StackPane root = new StackPane();
     root.getChildren().add(btn);
     
-    Scene scene = new Scene(root, 300, 150);
+    Scene scene = new Scene(root, 300, 250);
     
-    primaryStage.setTitle("GUI TEST01");
+    primaryStage.setTitle("Hello World!");
     primaryStage.setScene(scene);
     primaryStage.show();
   }
