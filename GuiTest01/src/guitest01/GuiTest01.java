@@ -12,7 +12,10 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
-
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+        
+        
 /**
  *
  * @author ba20034
@@ -27,14 +30,18 @@ public class GuiTest01 extends Application {
       
       @Override
       public void handle(ActionEvent event) {
-        System.out.println("毎月２４日発売です");
+//        System.out.println("毎月２４日発売です");
+         Alert al =new Alert(AlertType.INFORMATION);
+         al.setHeaderText("");
+         al.setContentText("毎月２４日発売です!");
+         al.showAndWait();
       }
     });
     
     StackPane root = new StackPane();
     root.getChildren().add(btn);
     
-    Scene scene = new Scene(root, 300, 250);
+    Scene scene = new Scene(root, 300, 150);
     
     primaryStage.setTitle("GUI TEST01");
     primaryStage.setScene(scene);
