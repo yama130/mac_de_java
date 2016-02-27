@@ -10,7 +10,10 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Label;
+
 
 /**
  *
@@ -23,8 +26,12 @@ public class FXMLDocumentController implements Initializable {
   
   @FXML
   private void handleButtonAction(ActionEvent event) {
-    System.out.println("You clicked me!");
-    label.setText("Hello World!");
+//    System.out.println("You clicked me!");
+//    label.setText("Hello World!");
+    Alert al=new Alert(AlertType.INFORMATION);
+    al.setHeaderText("");
+    al.setContentText("ポップアップ");
+    al.showAndWait();
   }
   
   @Override
